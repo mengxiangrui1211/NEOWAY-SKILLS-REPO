@@ -8,6 +8,11 @@
       "name": "nwy-rda8909b-build-skill",
       "source": "./plugins/nwy-rda8909b-build-skill",
       "description": "RDA8909B 平台编译工具，支持底层固件和上层APP的交互式编译，自动处理菜单选择并弹出实时日志窗口。当前适配 N25-EU-BZ（标准项目）和 N25-EU-NIC 项目，其他项目可扩展。用于用户要求\"编译\"\"构建\"\"build\"项目时。"
+    },
+    {
+      "name": "nwy-rda8909b-flash-skill",
+      "source": "./plugins/nwy-rda8909b-flash-skill",
+      "description": "规范 RDA 8909B / Neoway N25 固件烧录流程。通过 aicom-RDA-8909B-flasher MCP 连接器驱动本地 fpupgrade.exe 时，强制\"先询问端口与固件→写入配置→一键全自动闭环→监控至会话复位 idle\"，防止模型随心所欲调用工具。触发词：烧录、flash、升级。"
     }
   ]
 }
