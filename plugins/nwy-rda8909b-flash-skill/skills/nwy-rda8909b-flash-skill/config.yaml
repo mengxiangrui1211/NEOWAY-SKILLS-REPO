@@ -1,0 +1,24 @@
+# nwy-rda8909b-flash-skill 项目级配置
+# 默认留空即可 (agent 自动在远程机器搜最新 .lod, 不写死盘符); 如需固定某目录再填 build_dir 一行
+# 用户在对话里临时给的路径仍可覆盖此配置 (Step 2 B 优先级 #1)
+
+remote:
+  # 远程项目编译产物目录 (编译侧/agent 运行这台, 非本地烧录机器 G:盘)
+  # 留空 = agent 自动在远程机器 Glob 搜索最新 .lod (推荐, 免填且绝不写死盘符)
+  # 如需固定, 填你本机编译产物绝对目录, 例如 D:\\N25-6tcp\\RDA_8909B\\hex\\xxx_release
+  #   (换机器/换盘符时只改这一行文本, 不碰任何代码)
+  build_dir: ""
+
+  # 在 build_dir 下匹配固件的 glob 模式 (留空 = 取该目录下最新的 .lod)
+  lod_glob: "**/*.lod"
+
+  # 直接指定某个 .lod 文件名 (可选; 优先级高于 glob)
+  # 留空 = 自动取 build_dir + glob 命中的最新一个
+  lod_name: ""
+
+local:
+  # 本地烧录机器 IP (可选; 留空 = agent 从 MCP 配置文件里 aicom-RDA-8909B-flasher 的 url 自动推断)
+  host_ip: "192.168.60.91"
+
+  # :9870 上传端口 (固定, 一般不用改，已经集成到AICom本地工具中)
+  upload_port: 9870
