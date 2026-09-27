@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/neoway-logo.png" alt="Neoway 有方科技" width="200">
+</p>
+
 # Neoway 标准模组团队技能仓库
 
 Neoway 标准模组项目团队技能包分发仓库，由 mengxiangrui 发布维护。
