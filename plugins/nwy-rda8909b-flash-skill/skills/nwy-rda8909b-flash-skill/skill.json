@@ -1,0 +1,5 @@
+{
+  "name": "nwy-rda8909b-flash-skill",
+  "version": "1.0.0",
+  "description": "规范 RDA 8909B / Neoway N25 固件烧录流程。通过 aicom-RDA-8909B-flasher MCP 连接器驱动本地 fpupgrade.exe 时，强制\"先询问端口与固件→写入配置→一键全自动闭环→监控至会话复位 idle\"，防止模型随心所欲调用工具。触发词：烧录、flash、升级。"
+}
