@@ -1,6 +1,6 @@
 {
   "marketplace": "NEOWAY-SKILLS-REPO",
-  "updated": "2026-09-27T18:29:03.641Z",
+  "updated": "2026-09-27T18:29:20.525Z",
   "skills": {
     "nwy-rda8909b-build-skill": {
       "name": "nwy-rda8909b-build-skill",
@@ -9,6 +9,14 @@
       "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-rda8909b-build-skill-v1.0.0/nwy-rda8909b-build-skill-1.0.0.zip",
       "sizeMB": 0,
       "updated": "2026-09-27T18:29:03.641Z"
+    },
+    "nwy-rda8909b-flash-skill": {
+      "name": "nwy-rda8909b-flash-skill",
+      "version": "1.0.0",
+      "description": "规范 RDA 8909B / Neoway N25 固件烧录流程。通过 aicom-RDA-8909B-flasher MCP 连接器驱动本地 fpupgrade.exe 时，强制\"先询问端口与固件→写入配置→一键全自动闭环→监控至会话复位 idle\"，防止模型随心所欲调用工具。触发词：烧录、flash、升级。",
+      "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-rda8909b-flash-skill-v1.0.0/nwy-rda8909b-flash-skill-1.0.0.zip",
+      "sizeMB": 0,
+      "updated": "2026-09-27T18:29:20.525Z"
     }
   }
 }
