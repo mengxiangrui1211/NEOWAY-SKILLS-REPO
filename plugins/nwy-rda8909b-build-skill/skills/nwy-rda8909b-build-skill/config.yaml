@@ -1,0 +1,43 @@
+# nwy-rda8909b-build-skill 项目配置文件
+# 新增项目只需在下面添加即可，AI 会自动读取
+
+projects:
+
+  # ===== N25-EU open 版本 ===== created 2026-04-27 by mengxiangrui
+  N25-EU-NIC:
+    name: N25-EU-NIC
+    desc: EU open - 定制项目
+    opencpu: neoway_build_N25_opencpu.bat
+    app: neoway_build_N25_app.bat
+    menu_key: "1"
+
+  N25_EU_BZ:
+    name: N25_EU_BZ
+    desc: EU open - 标准项目
+    opencpu: neoway_build_N25_opencpu.bat
+    app: neoway_build_N25_app.bat
+    menu_key: "a"
+
+  # ===== N25-CN open 版本（无菜单，直接运行）===== created 2026-7-31 by mengxiangrui
+  N25-CN-OPEN:
+    name: N25-CN-OPEN
+    desc: CN open - 标准项目
+    opencpu: neoway_build_N25_cn_opencpu.bat
+    app: neoway_build_N25_cn_app.bat
+
+  # ===== N25 标准版本（1步编译，只有 script 字段）===== created 2026-7-31 by mengxiangrui
+  N25-CN-STD:
+    name: N25-CN-STD
+    desc: CN 标准版本
+    script: neoway_build_N25_CN.bat
+
+  N25-EU-STD:
+    name: N25-EU-STD
+    desc: EU 标准版本
+    script: neoway_build_N25_EU.bat
+
+  # ===== N25 定制版本（1步编译）===== created 2026-7-31 by mengxiangrui
+  N25-India:
+    name: N25-India
+    desc: 印度电力定制
+    script: neoway_build_N25_india.bat
