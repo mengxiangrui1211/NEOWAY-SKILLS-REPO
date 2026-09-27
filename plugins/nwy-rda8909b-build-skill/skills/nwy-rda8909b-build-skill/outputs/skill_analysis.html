@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RDA8909B 编译技能 · 汇报介绍</title>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --bg-card: #ffffff;
+    --bg-soft: #eef1f6;
+    --bg-code: #f3f4f6;
+    --text: #1a1f2e;
+    --text-soft: #4a5160;
+    --text-mute: #7a8294;
+    --border: #e3e7ee;
+    --accent: #2b6cb0;
+    --accent-soft: #ebf2fb;
+    --green: #2f855a;
+    --green-soft: #e6f4ec;
+    --red: #c53030;
+    --red-soft: #fdeaea;
+    --orange: #c05621;
+    --orange-soft: #fdf0e6;
+    --purple: #6b46c1;
+    --purple-soft: #f1ebfc;
+    --shadow: 0 1px 3px rgba(15,23,42,0.04), 0 4px 12px rgba(15,23,42,0.04);
+    --shadow-hover: 0 4px 16px rgba(15,23,42,0.08), 0 8px 24px rgba(15,23,42,0.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #2c7a7b 100%);
+    color: #fff;
+    padding: 56px 0 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    border-radius: 50%;
+  }
+  .hero-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    backdrop-filter: blur(8px);
+  }
+  .hero h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .hero .subtitle {
+    font-size: 17px;
+    opacity: 0.9;
+    max-width: 760px;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-meta .item { font-size: 13px; opacity: 0.85; }
+  .hero-meta .item strong { display: block; font-size: 15px; opacity: 1; margin-top: 2px; }
+
+  /* ===== Stats ===== */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: -32px 0 48px;
+    position: relative;
+    z-index: 2;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+  }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+  .stat-card .num {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-card .label { font-size: 13px; color: var(--text-mute); }
+
+  /* ===== Section ===== */
+  section { margin-bottom: 56px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .section-title .idx {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .section-desc { color: var(--text-mute); font-size: 14px; margin-bottom: 24px; }
+
+  /* ===== Workflow ===== */
+  .workflow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    position: relative;
+  }
+  .step {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    position: relative;
+    transition: all 0.25s;
+  }
+  .step:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); }
+  .step .step-num {
+    display: inline-block;
+    width: 32px; height: 32px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .step h4 { font-size: 15px; margin-bottom: 8px; color: var(--text); }
+  .step p { font-size: 12.5px; color: var(--text-soft); line-height: 1.55; }
+  .step::after {
+    content: '→';
+    position: absolute;
+    right: -10px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-mute);
+    font-size: 18px;
+    z-index: 1;
+  }
+  .step:last-child::after { display: none; }
+  .step.branch { background: var(--orange-soft); border-color: #f6ad55; }
+  .step.branch .step-num { background: var(--orange); color: #fff; }
+
+  /* ===== Cards grid ===== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    height: 100%;
+  }
+  .card h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+  }
+  .card h4 .icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .card ul { list-style: none; }
+  .card li {
+    font-size: 13.5px;
+    color: var(--text-soft);
+    padding: 6px 0;
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.55;
+  }
+  .card li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 13px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .card.good h4 .icon { background: var(--green-soft); color: var(--green); }
+  .card.good li::before { background: var(--green); }
+  .card.info h4 .icon { background: var(--accent-soft); color: var(--accent); }
+  .card.purple h4 .icon { background: var(--purple-soft); color: var(--purple); }
+  .card.purple li::before { background: var(--purple); }
+
+  /* ===== Table ===== */
+  .table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead { background: var(--bg-soft); }
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    font-size: 12.5px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-soft);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafbfc; }
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 100px;
+    font-size: 11.5px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .badge.green { background: var(--green-soft); color: var(--green); }
+  .badge.blue { background: var(--accent-soft); color: var(--accent); }
+  .badge.gray { background: var(--bg-soft); color: var(--text-mute); }
+  .badge.orange { background: var(--orange-soft); color: var(--orange); }
+  .badge.purple { background: var(--purple-soft); color: var(--purple); }
+  code.inline {
+    background: var(--bg-code);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: "SF Mono", Consolas, "Cascadia Code", monospace;
+    font-size: 12.5px;
+    color: var(--purple);
+  }
+
+  /* ===== File tree ===== */
+  .file-tree {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    font-family: "SF Mono", Consolas, "Cascadia Code", monospace;
+    font-size: 13.5px;
+    line-height: 1.9;
+    box-shadow: var(--shadow);
+  }
+  .file-tree .dir { color: var(--accent); font-weight: 600; }
+  .file-tree .file { color: var(--text-soft); }
+  .file-tree .comment { color: var(--text-mute); font-style: italic; }
+  .file-tree .indent { padding-left: 24px; }
+  .file-tree .indent2 { padding-left: 48px; }
+
+  /* ===== Tech highlights ===== */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .tech-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: all 0.2s;
+  }
+  .tech-item:hover { transform: translateX(2px); box-shadow: var(--shadow); }
+  .tech-item h5 { font-size: 14px; margin-bottom: 6px; color: var(--text); }
+  .tech-item p { font-size: 12.5px; color: var(--text-soft); line-height: 1.55; }
+  .tech-item code {
+    background: var(--bg-code);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11.5px;
+    color: var(--purple);
+    font-family: "SF Mono", Consolas, monospace;
+  }
+
+  /* ===== Notification preview ===== */
+  .notif-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .notif {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+  }
+  .notif:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .notif-header {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .notif-header.success { background: var(--green-soft); color: var(--green); }
+  .notif-header.fixed { background: var(--orange-soft); color: var(--orange); }
+  .notif-header.failed { background: var(--red-soft); color: var(--red); }
+  .notif-body {
+    padding: 14px 16px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .notif-body .row { display: flex; gap: 8px; }
+  .notif-body .row .k {
+    color: var(--text-mute);
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+  .notif-body .row .v { color: var(--text); font-weight: 500; }
+
+  /* ===== Value summary ===== */
+  .value-box {
+    background: linear-gradient(135deg, #ebf2fb 0%, #e6f4ec 100%);
+    border: 1px solid #cfe0f5;
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .value-item { text-align: center; }
+  .value-item .v-icon { font-size: 28px; margin-bottom: 8px; }
+  .value-item h5 { font-size: 15px; color: var(--text); margin-bottom: 6px; }
+  .value-item p { font-size: 12.5px; color: var(--text-soft); line-height: 1.55; }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 64px;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-mute);
+    font-size: 13px;
+  }
+  footer .gen-time { margin-top: 4px; font-size: 12px; }
+
+  @media (max-width: 960px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .workflow { grid-template-columns: repeat(2, 1fr); }
+    .step::after { display: none; }
+    .grid-2, .grid-3, .tech-grid, .notif-grid, .value-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== Hero ========== -->
+<header class="hero">
+  <div class="container">
+    <span class="hero-tag">RDA8909B 平台 · 智能编译助手</span>
+    <h1>nwy-rda8909b-build-skill</h1>
+    <p class="subtitle">RDA8909B 平台智能编译助手 —— 将原本需要人工多次交互的固件/APP 编译流程全面自动化：一句话触发、自动选配、实时进度可见、异常自愈、结果主动推送，让编译这件事交给 AI 闭环完成。</p>
+    <div class="hero-meta">
+      <div class="item">开发者<strong>mengxiangrui</strong></div>
+      <div class="item">邮箱<strong>mengxiangrui@neoway.com</strong></div>
+      <div class="item">适用平台<strong>RDA8909B / N25 系列</strong></div>
+      <div class="item">触发方式<strong>自然语言“编译 / 构建”</strong></div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ========== Stats ========== -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="num">6</div>
+      <div class="label">已适配项目</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">3</div>
+      <div class="label">编译模式支持</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">5</div>
+      <div class="label">步骤全自动闭环</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">∞</div>
+      <div class="label">可配置项目扩展</div>
+    </div>
+  </div>
+
+  <!-- ========== 1. 价值总结 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">1</span>核心价值</div>
+    <p class="section-desc">这个技能为团队带来的直接收益</p>
+    <div class="value-box">
+      <div class="value-item">
+        <div class="v-icon">⚡</div>
+        <h5>效率提升</h5>
+        <p>编译全程无需人工值守，原有 3–10 分钟的人工交互编译，现在一句话即可发起，工程师可专注其他工作。</p>
+      </div>
+      <div class="value-item">
+        <div class="v-icon">🛡️</div>
+        <h5>异常自愈</h5>
+        <p>编译报错可自动识别并修复常见错误，减少重复返工，让编译成功率显著提升。</p>
+      </div>
+      <div class="value-item">
+        <div class="v-icon">📡</div>
+        <h5>主动通知</h5>
+        <p>编译结果通过飞书主动推送，成功/失败/自愈一目了然，团队状态实时同步。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2. 工作流 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">2</span>工作流程</div>
+    <p class="section-desc">从一句话指令到结果推送，全自动闭环，无需人工介入中间环节</p>
+    <div class="workflow">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h4>选编译项目</h4>
+        <p>AI 读取配置，引导选择目标项目，无需记忆任何命令或路径。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h4>选编译类型</h4>
+        <p>底层固件 / 上层业务 APP / 一键全编，灵活组合。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h4>自动执行</h4>
+        <p>智能注入菜单选择，后台编译并弹出实时日志窗口。</p>
+      </div>
+      <div class="step branch">
+        <span class="step-num">4</span>
+        <h4>智能诊断</h4>
+        <p>自动判读编译结果，遇常见错误自行修复并重编。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">5</span>
+        <h4>结果推送</h4>
+        <p>通过飞书机器人推送结构化编译报告给团队。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. 项目适配 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">3</span>项目适配能力</div>
+    <p class="section-desc">已覆盖 EU / CN / 印度三大区域的标准与定制项目，配置即生效</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>项目名</th>
+            <th>应用场景</th>
+            <th>编译模式</th>
+            <th>底版本脚本</th>
+            <th>APP 脚本</th>
+            <th>菜单选择</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>N25-EU-NIC</strong></td>
+            <td>EU open - 定制项目</td>
+            <td><span class="badge blue">两步编译</span></td>
+            <td><code class="inline">neoway_build_N25_opencpu.bat</code></td>
+            <td><code class="inline">neoway_build_N25_app.bat</code></td>
+            <td><span class="badge purple">菜单 1</span></td>
+          </tr>
+          <tr>
+            <td><strong>N25_EU_BZ</strong></td>
+            <td>EU open - 标准项目</td>
+            <td><span class="badge blue">两步编译</span></td>
+            <td><code class="inline">neoway_build_N25_opencpu.bat</code></td>
+            <td><code class="inline">neoway_build_N25_app.bat</code></td>
+            <td><span class="badge purple">菜单 a</span></td>
+          </tr>
+          <tr>
+            <td><strong>N25-CN-OPEN</strong></td>
+            <td>CN open - 标准项目</td>
+            <td><span class="badge blue">两步编译</span></td>
+            <td><code class="inline">neoway_build_N25_cn_opencpu.bat</code></td>
+            <td><code class="inline">neoway_build_N25_cn_app.bat</code></td>
+            <td><span class="badge gray">直接运行</span></td>
+          </tr>
+          <tr>
+            <td><strong>N25-CN-STD</strong></td>
+            <td>CN 标准版本</td>
+            <td><span class="badge orange">一键编译</span></td>
+            <td colspan="2"><code class="inline">neoway_build_N25_CN.bat</code></td>
+            <td><span class="badge gray">单脚本</span></td>
+          </tr>
+          <tr>
+            <td><strong>N25-EU-STD</strong></td>
+            <td>EU 标准版本</td>
+            <td><span class="badge orange">一键编译</span></td>
+            <td colspan="2"><code class="inline">neoway_build_N25_EU.bat</code></td>
+            <td><span class="badge gray">单脚本</span></td>
+          </tr>
+          <tr>
+            <td><strong>N25-India</strong></td>
+            <td>印度电力定制</td>
+            <td><span class="badge orange">一键编译</span></td>
+            <td colspan="2"><code class="inline">neoway_build_N25_india.bat</code></td>
+            <td><span class="badge gray">单脚本</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:16px;background:linear-gradient(135deg,#ebf2fb,#e6f4ec);border:1px solid #cfe0f5;border-left:4px solid var(--accent);">
+      <div class="title" style="color:var(--accent);">✦ 扩展能力</div>
+      <p style="color:var(--text-soft)">新增项目只需要在 <code style="background:#fff;padding:1px 6px;border-radius:3px;font-size:12px;color:var(--purple);">config.yaml</code> 追加一条配置，AI 自动识别编译模式与菜单方式，<strong>无需改动主程序代码</strong>，可随业务快速横向扩展。</p>
+    </div>
+  </section>
+
+  <!-- ========== 4. 能力亮点 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">4</span>核心能力亮点</div>
+    <p class="section-desc">设计精巧、工程实践扎实的几项关键能力</p>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <h5>① 零命令交互</h5>
+        <p>工程师用自然语言即可发起编译，菜单选择由 AI 自动注入，彻底告别记命令、找脚本路径。</p>
+      </div>
+      <div class="tech-item">
+        <h5>② 实时进度可见</h5>
+        <p>编译启动即弹出日志窗口，进度实时刷新，告别"盲等"，异常信息即时可读。</p>
+      </div>
+      <div class="tech-item">
+        <h5>③ 异常自愈</h5>
+        <p>能识别脚本的输出陷阱（如 APP 误报 Success），精准判读真实结果，并对常见错误自动修复重试。</p>
+      </div>
+      <div class="tech-item">
+        <h5>④ 结果双重确认</h5>
+        <p>成功判定后再延迟校验，规避"成功后又报错"的边缘情况，结果判定更可靠。</p>
+      </div>
+      <div class="tech-item">
+        <h5>⑤ 跨目录通用</h5>
+        <p>全路径动态解析，项目放置位置不受限，换机器、换目录都能稳定运行。</p>
+      </div>
+      <div class="tech-item">
+        <h5>⑥ 兼容性强</h5>
+        <p>自动绕过 PowerShell 脚本执行策略限制，新环境开箱即用，无需额外配置。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. 智能诊断能力 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">5</span>智能诊断与自愈</div>
+    <p class="section-desc">内置 6 类编译错误的识别与分类，常见错误可自动定位并修复</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>错误类型</th>
+            <th>触发特征</th>
+            <th>诊断方式</th>
+            <th>自愈能力</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>语法错误</td>
+            <td><code class="inline">error: expected</code> / <code class="inline">syntax error</code></td>
+            <td>定位文件:行号，分析语法问题</td>
+            <td><span class="badge green">可自愈</span></td>
+          </tr>
+          <tr>
+            <td>未定义符号</td>
+            <td><code class="inline">undefined reference</code> / <code class="inline">undeclared</code></td>
+            <td>查找缺失函数声明或头文件</td>
+            <td><span class="badge green">可自愈</span></td>
+          </tr>
+          <tr>
+            <td>头文件缺失</td>
+            <td><code class="inline">No such file or directory</code></td>
+            <td>检查 include 路径或文件存在性</td>
+            <td><span class="badge orange">视情况</span></td>
+          </tr>
+          <tr>
+            <td>类型不匹配</td>
+            <td><code class="inline">incompatible type</code></td>
+            <td>检查函数参数和返回值类型</td>
+            <td><span class="badge green">可自愈</span></td>
+          </tr>
+          <tr>
+            <td>链接错误</td>
+            <td><code class="inline">multiple definition</code> / <code class="inline">ld returned</code></td>
+            <td>检查重复定义或库缺失</td>
+            <td><span class="badge orange">视情况</span></td>
+          </tr>
+          <tr>
+            <td>构建脚本错误</td>
+            <td><code class="inline">No rule to make target</code></td>
+            <td>检查构建脚本依赖关系</td>
+            <td><span class="badge gray">转人工</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========== 6. 通知闭环 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">6</span>结果推送闭环</div>
+    <p class="section-desc">编译结束即向团队飞书推送结构化报告，覆盖全部结果分支</p>
+    <div class="notif-grid">
+      <div class="notif">
+        <div class="notif-header success">✓ 编译成功</div>
+        <div class="notif-body">
+          <div class="row"><span class="k">项目</span><span class="v">N25-EU-NIC</span></div>
+          <div class="row"><span class="k">类型</span><span class="v">底层固件</span></div>
+          <div class="row"><span class="k">状态</span><span class="v" style="color:var(--green)">编译成功</span></div>
+          <div class="row"><span class="k">产物</span><span class="v">full_8909b_..._flash.lod</span></div>
+        </div>
+      </div>
+      <div class="notif">
+        <div class="notif-header fixed">↻ 自愈成功</div>
+        <div class="notif-body">
+          <div class="row"><span class="k">项目</span><span class="v">N25-EU-NIC</span></div>
+          <div class="row"><span class="k">类型</span><span class="v">上层业务APP</span></div>
+          <div class="row"><span class="k">首次</span><span class="v" style="color:var(--red)">失败</span></div>
+          <div class="row"><span class="k">修复</span><span class="v">已自动修复重编</span></div>
+          <div class="row"><span class="k">结果</span><span class="v" style="color:var(--green)">编译成功</span></div>
+        </div>
+      </div>
+      <div class="notif">
+        <div class="notif-header failed">✗ 需关注</div>
+        <div class="notif-body">
+          <div class="row"><span class="k">项目</span><span class="v">N25-EU-NIC</span></div>
+          <div class="row"><span class="k">类型</span><span class="v">上层业务APP</span></div>
+          <div class="row"><span class="k">状态</span><span class="v" style="color:var(--red)">编译失败</span></div>
+          <div class="row"><span class="k">位置</span><span class="v">extapp.c:4674</span></div>
+          <div class="row"><span class="k">建议</span><span class="v">需人工确认</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. 文件结构 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">7</span>技能结构</div>
+    <p class="section-desc">轻量、清晰、易维护的工程组织</p>
+    <div class="file-tree">
+      <div class="dir">nwy-rda8909b-build-skill/</div>
+      <div class="indent"><span class="file">SKILL.md</span>  <span class="comment"># 技能定义主文件（5 步工作流）</span></div>
+      <div class="indent"><span class="file">README.md</span>  <span class="comment"># 项目说明文档</span></div>
+      <div class="indent"><span class="file">config.yaml</span>  <span class="comment"># 项目配置（6 个项目，可扩展）</span></div>
+      <div class="indent"><span class="dir">scripts/</span></div>
+      <div class="indent2"><span class="file">watch_build_log.ps1</span>  <span class="comment"># 实时日志监控脚本</span></div>
+    </div>
+  </section>
+
+  <!-- ========== 8. 总结 ========== -->
+  <section>
+    <div class="section-title"><span class="idx">8</span>总结</div>
+    <p class="section-desc">一句话概括这个技能的定位</p>
+    <div class="value-box" style="grid-template-columns:1fr;">
+      <div class="value-item">
+        <div class="v-icon">🤖</div>
+        <h5>把"编译"做成一句话的事</h5>
+        <p>从选配、执行、诊断到通知，RDA8909B 编译技能为团队提供了一条全自动、可扩展、带自愈能力的编译流水线，让工程师从重复的编译操作中解放出来，把精力投入到更有价值的开发工作中。</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>RDA8909B 智能编译技能 · 介绍汇报</div>
+  <div class="gen-time">Generated by WorkBuddy · 2026-08-05</div>
+</footer>
+
+</body>
+</html>
