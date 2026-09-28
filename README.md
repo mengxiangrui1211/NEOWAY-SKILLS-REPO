@@ -12,6 +12,7 @@ Neoway 标准模组项目团队技能包分发仓库，由 mengxiangrui 发布�
 <!-- SKILLS:BEGIN 由 AICom 发布时自动更新，勿手工编辑 -->
 | 技能包 | 版本 | 说明 | 更新时间 |
 | --- | --- | --- | --- |
+| skill-creator | v1.0.0 | Creates new Claude Code skills following repository conventions with proper structure, frontmatter, workflows, code examples, and reference files. Use when users request "create a skill", "new skill", "generate skill", or "add skill to collection". | 2026/9/28 |
 | mermaid-diagram-generator | v1.0.0 | Creates Mermaid diagrams for flowcharts, sequence diagrams, ERDs, and architecture visualizations in markdown. Use when users request "Mermaid diagram", "flowchart", "sequence diagram", "ERD diagram", or "architecture diagram". | 2026/9/28 |
 | nwy-requirements-analysis-skill | v1.0.0 | 查询飞书项目（Meegle/Lark Project）工作项，并可继续做需求分析与当前仓库源码定位。用户提到"查一下 XXX 单号""飞书项目单""meegle 单子""飞书需求单"时查详情，查完询问是否继续需求开发分析；说"分析这个需求单""需求分析""这个单子要改哪些代码""结合代码分析需求""定位改动点"时直接进入分析：需求拆解（功能点/影响范围/验收点/疑点）→ 当前工作仓库内通用源码检索 → 输出候选代码改动点与调用链，并把分析报告落盘为 docs/ 下的 nwy-<序号>-<自动生成名>.md。自动发现 project_key 一次命中；代码分析不写死任何仓库路径。 | 2026/9/28 |
 | nwy-rda8909b-flash-skill | v1.0.0 | 规范 RDA 8909B / Neoway N25 固件烧录流程。通过 aicom-RDA-8909B-flasher MCP 连接器驱动本地 fpupgrade.exe 时，强制"先询问端口与固件→写入配置→一键全自动闭环→监控至会话复位 idle"，防止模型随心所欲调用工具。触发词：烧录、flash、升级。 | 2026/9/28 |
