@@ -15,6 +15,8 @@ Neoway 标准模组项目团队技能包分发仓库，由 mengxiangrui 发布�
 | nwy-requirements-analysis-skill | v1.0.0 | 查询飞书项目（Meegle/Lark Project）工作项，并可继续做需求分析与当前仓库源码定位。用户提到"查一下 XXX 单号""飞书项目单""meegle 单子""飞书需求单"时查详情，查完询问是否继续需求开发分析；说"分析这个需求单""需求分析""这个单子要改哪些代码""结合代码分析需求""定位改动点"时直接进入分析：需求拆解（功能点/影响范围/验收点/疑点）→ 当前工作仓库内通用源码检索 → 输出候选代码改动点与调用链，并把分析报告落盘为 docs/ 下的 nwy-<序号>-<自动生成名>.md。自动发现 project_key 一次命中；代码分析不写死任何仓库路径。 | 2026/9/28 |
 | nwy-rda8909b-flash-skill | v1.0.0 | 规范 RDA 8909B / Neoway N25 固件烧录流程。通过 aicom-RDA-8909B-flasher MCP 连接器驱动本地 fpupgrade.exe 时，强制"先询问端口与固件→写入配置→一键全自动闭环→监控至会话复位 idle"，防止模型随心所欲调用工具。触发词：烧录、flash、升级。 | 2026/9/28 |
 | nwy-rda8909b-build-skill | v1.0.0 | RDA8909B 平台编译工具，支持底层固件和上层APP的交互式编译，自动处理菜单选择并弹出实时日志窗口。当前适配 N25-EU-BZ（标准项目）和 N25-EU-NIC 项目，其他项目可扩展。用于用户要求"编译""构建""build"项目时。 | 2026/9/28 |
+
+> 本表由 AICom 发布技能时自动更新（发布即刷新，请勿手工编辑本区块）；维护者发布入口见下文「发布 / 更新」。
 <!-- SKILLS:END -->
 ## 方式一：AICom 内安装（推荐）
 
@@ -54,6 +56,6 @@ skills-index.json                  # AICom 团队仓库索引（版本 + zip 资
 
 1. 修改技能包内容，把包内 `skill.json` 的 `version` 提升（如 1.0.0 → 1.0.1）
 2. AICom → Skills 管理 → 我的技能包 → 选包点「发布」，目标仓库填 `mengxiangrui1211/NEOWAY-SKILLS-REPO`
-3. 发布流程自动完成：打包 zip → 创建 Release → 同步目录树 → 更新 `skills-index.json`
+3. 发布流程自动完成：打包 zip → 创建 Release → 同步目录树 → 更新 `skills-index.json` 与上方 README 技能列表
 
 注意：同一版本不能重复发布（release tag 冲突闸），发布报「版本号未升级 / Release 已存在」时先提升版本号。
