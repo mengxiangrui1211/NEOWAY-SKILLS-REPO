@@ -1,6 +1,6 @@
 {
   "marketplace": "NEOWAY-SKILLS-REPO",
-  "updated": "2026-09-27T18:29:20.525Z",
+  "updated": "2026-09-28T08:31:18.527Z",
   "skills": {
     "nwy-rda8909b-build-skill": {
       "name": "nwy-rda8909b-build-skill",
@@ -17,6 +17,14 @@
       "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-rda8909b-flash-skill-v1.0.0/nwy-rda8909b-flash-skill-1.0.0.zip",
       "sizeMB": 0,
       "updated": "2026-09-27T18:29:20.525Z"
+    },
+    "nwy-requirements-analysis-skill": {
+      "name": "nwy-requirements-analysis-skill",
+      "version": "1.0.0",
+      "description": "查询飞书项目（Meegle/Lark Project）工作项，并可继续做需求分析与当前仓库源码定位。用户提到\"查一下 XXX 单号\"\"飞书项目单\"\"meegle 单子\"\"飞书需求单\"时查详情，查完询问是否继续需求开发分析；说\"分析这个需求单\"\"需求分析\"\"这个单子要改哪些代码\"\"结合代码分析需求\"\"定位改动点\"时直接进入分析：需求拆解（功能点/影响范围/验收点/疑点）→ 当前工作仓库内通用源码检索 → 输出候选代码改动点与调用链，并把分析报告落盘为 docs/ 下的 nwy-<序号>-<自动生成名>.md。自动发现 project_key 一次命中；代码分析不写死任何仓库路径。",
+      "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-requirements-analysis-skill-v1.0.0/nwy-requirements-analysis-skill-1.0.0.zip",
+      "sizeMB": 0,
+      "updated": "2026-09-28T08:31:18.526Z"
     }
   }
 }
