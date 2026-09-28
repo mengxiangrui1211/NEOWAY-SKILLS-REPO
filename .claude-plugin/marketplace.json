@@ -23,6 +23,11 @@
       "name": "mermaid-diagram-generator",
       "source": "./plugins/mermaid-diagram-generator",
       "description": "Creates Mermaid diagrams for flowcharts, sequence diagrams, ERDs, and architecture visualizations in markdown. Use when users request \"Mermaid diagram\", \"flowchart\", \"sequence diagram\", \"ERD diagram\", or \"architecture diagram\"."
+    },
+    {
+      "name": "skill-creator",
+      "source": "./plugins/skill-creator",
+      "description": "Creates new Claude Code skills following repository conventions with proper structure, frontmatter, workflows, code examples, and reference files. Use when users request \"create a skill\", \"new skill\", \"generate skill\", or \"add skill to collection\"."
     }
   ]
 }
