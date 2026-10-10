@@ -1,0 +1,5 @@
+{
+  "name": "nwy-ec-fota-create-skill",
+  "version": "1.0.0",
+  "description": "移芯 EC 系列模组 FOTA 差分包打包，支持 EC616/EC618/EC626/EC626E/EC716/EC718/QCX 全系平台（config 内置）。当用户要求\"做 fota 包 / 打差分包 / 差分 / 生成升级包 / 回退包 / 004-005.par / 版本升级包 / delta 包\"或提到 FotaToolkit / EC626 / binpkg / Eigencomm 打包等时使用。基于 FotaToolkit.exe CLI（工具已内置在 skill 的 tool/ 目录，自包含可迁移），一次产出正向升级包与反向回退包并自动校验。不涉及 GUI 操作、串口烧录和云端 FOTA。"
+}

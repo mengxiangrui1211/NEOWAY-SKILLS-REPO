@@ -1,0 +1,63 @@
+{
+ "TheseAreComments!":[
+  {"Comment": "'capacity' in 'FotaCapability' is the largest size of all images in one fota processing (0-4MB;1-16MB)!"},
+  {"Comment": "'diffMode' in 'FotaCapability' is the flag for handling compressed section(s) in binary file (0-no zip;1-has zip)!"},
+  {"Comment": "'attr' in 'SysImageMem' must be set with one of these choices('BINPKG/AP/CP/APP/APP2/SYSH'), which are forbidden to be redefined!"},
+  {"Comment": "'attr' in 'ExtenOtaMem' must be set with one of these choices('EF/SD'), which are forbidden to be redefined!"},
+  {"Comment": "'name' in 'StorageDevice' must be set with one of these choices('AP/CP/EF/SD'), which are forbidden to be redefined!"},
+  {"Comment": "'base' in 'StorageDevice' is the global unique starting address, and it can not be modified!"},
+  {"Comment": "However, other fields can be redefined to whatever you want, including the name of this config file!"}
+ ],
+ "CompanyName": "EiGENCOMM",
+ "ProductName": "QCX212",
+ "FotaCoreVer": "2.0",
+ "FotaCapability": {
+   "capacity": 0,
+   "diffMode": 0,
+   "hasPkgHlc": 0,
+   "metaPseg": 32,
+   "bkupMemSize": 32768,
+   "deltaMemSize": 491520,
+   "avlbRamSize": 65536,
+   "zipAlgorithm": {
+     "zipMeth": 1,
+     "bzipMode": 1
+   }
+ },
+ "FotaAtCmd": {
+   "mode": 0,
+   "ate": 0,
+   "ver": 1,
+   "name": "",
+   "pmss": 256,
+   "dmwt": 300
+ },
+ "SysImageMem": [
+  {
+   "attr": "APP",
+   "addr": 8519680,
+   "size": 2621440
+  },
+  {
+   "attr": "SYSH",
+   "addr": 8396800,
+   "size": 8192
+  }
+ ],
+ "StorageDevice": [
+  {
+   "name": "AP",
+   "base": 8388608,
+   "size": 4194304
+  }
+ ],
+ "MiscSetting": {
+   "pollRx": 30,
+    "debug": {
+      "delta": {
+        "patMem": 1,
+        "patVeri": 7
+      }
+    }
+ } 
+}

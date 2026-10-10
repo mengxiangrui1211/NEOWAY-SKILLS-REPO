@@ -1,0 +1,69 @@
+INTRODUCTION
+
+FotaToolkit is a small toolkit for FOTA service. Actually, it is always used to make a delta binary file deriving from two different binary images
+and to merge two delta files(*.par) into an entire parchive(*.par). 
+Furthermore, it provides a way to download/deliver data to a specific memory zone for upgrading the system device or updating the system data
+via AT command and a way to read the data from a specific memory zone as well, 
+
+
+FEATURES
+
+  * FOTA delta file generator.
+  * FOTA delta file upgrader via AT command
+  * FOTA delta files merger
+  * FOTA data files deliverer for a specific memory zone
+  * FOTA data files reader from a specific memory zone
+
+CHANGELOG
+  * |- V2.6: new feature of creating the *.fpar and signing the *.par/*.fpar file
+  * |- V2.5: new feature of hulu suite based on core(2.0)
+  * |- V2.0: new core(2.0) for compressed data difference
+  * |- V1.2: support to read data from a certain specific memory zone
+  * |- V1.1: support to deliver data to a certain specific memory zone
+  * |- V1.0: support to merge delta files in one and generate delta from *.binpkg
+  * |- V0.5: support FOTAoS(AT) and release the GUI tool of initial version
+  * |- V0.4: rename the project with official name: FotaToolkit
+  * |- V0.3: support the option of base & target version
+  * |- V0.2: initial version
+  
+RELASE NOTE
+ * |- V3.6.4.0 : improvement on the control of debug and the robust of system
+ * |- V3.6.2.0 : enhance the signature verification of secure head when making a *.par/*.fpar file
+ * |- V3.6.0.0 : initial release for Linux
+ * |- V3.5.24.0: optimization on signing the *.par/.fpar
+ * |- V3.5.22.0: support to sign the *.par/.fpar based on SHA224
+ * |- V3.5.20.0: fix the issue of creating *.par/*.fpar file from binpkg
+ * |- V3.5.18.0: fix the issue of image load address error extracted by cJSON valueint and support chip ec718u
+ * |- V3.5.16.0: support signature verification of secure head in advance of FOTA process
+ * |- V3.5.14.0: support to sign the *.par/.fpar and generate the *.fpar with a full image
+ * |- V3.5.12.0: add json file for ec716e
+ * |- V3.5.10.0: fix the issue of overflowed file tail size
+ * |- V3.5.8.0 : support HLS feature for unzip image file
+ * |- V3.5.6.0 : rename the attribute of signed data for secured system image("SYS" --> "SYSH")
+ * |- V3.5.5.0 : fix the issue of data length in use of bzlib
+ * |- V3.5.4.0 : improvement on *par format for distinguishing the system signed data is included or not
+ * |- V3.5.3.0 : fix the issue about HLS when delta file is being created
+ * |- V3.5.2.0 : output the smaller delta file when hulu suite is enabled
+ * |- V3.5.0.0 : support hulu suite for core(2.0) and zone resizing
+ * |- V3.0.4.0 : fix the issue of improper available RAM size
+ * |- V3.0.3.0 : support to create delta file from binary/binpkg pair with a single de~/compress method
+ * |- V3.0.2.0 : support chip ec716s and fix the issues of wrong address & size in config files
+ * |- V3.0.0.0 : new core(2.0)
+ * |- V2.2.1.0 : update fcelf.exe and fix the reporting issue of FOTA progress
+ * |- V2.1.8.0 : new GUI window for reading binary data
+ * |- V2.1.7.0 : fix the issue on sending 'AT+NFWUPD=5' and revert pmss to 256 in ec618.json file
+ * |- V2.1.6.0 : update fcelf.exe for unpacking new format binpkg file
+ * |- V2.1.5.0 : new feature of reading binary data from a specific memory zone
+ * |- V2.1.4.0 : new feature of delivering binary data to a specific memory zone
+ * |- V2.1.2.0 : fix the issue of patching failure when the delta(*.par) derived from a BINPKG pair contains only one image of non-AP type
+ * |- V2.1.1.0 : fix the issue of dead lock on Win7 and improve the patching performance
+
+PROJECT NAME:
+ * |-FotaToolkit.sln
+
+EXCUTABLE:
+ * |-.\workspace\FotaToolkit.exe
+
+DEVELOPMENT EVIROMENT:
+ * |-Microsoft Visual C++ 2019(X86)
+

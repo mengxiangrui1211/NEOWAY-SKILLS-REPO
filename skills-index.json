@@ -1,6 +1,6 @@
 {
   "marketplace": "NEOWAY-SKILLS-REPO",
-  "updated": "2026-09-28T15:30:49.103Z",
+  "updated": "2026-10-10T17:37:24.596Z",
   "skills": {
     "nwy-rda8909b-build-skill": {
       "name": "nwy-rda8909b-build-skill",
@@ -41,6 +41,14 @@
       "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/skill-creator-v1.0.0/skill-creator-1.0.0.zip",
       "sizeMB": 0,
       "updated": "2026-09-28T15:30:37.796Z"
+    },
+    "nwy-ec-fota-create-skill": {
+      "name": "nwy-ec-fota-create-skill",
+      "version": "1.0.0",
+      "description": "移芯 EC 系列模组 FOTA 差分包打包，支持 EC616/EC618/EC626/EC626E/EC716/EC718/QCX 全系平台（config 内置）。当用户要求\"做 fota 包 / 打差分包 / 差分 / 生成升级包 / 回退包 / 004-005.par / 版本升级包 / delta 包\"或提到 FotaToolkit / EC626 / binpkg / Eigencomm 打包等时使用。基于 FotaToolkit.exe CLI（工具已内置在 skill 的 tool/ 目录，自包含可迁移），一次产出正向升级包与反向回退包并自动校验。不涉及 GUI 操作、串口烧录和云端 FOTA。",
+      "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-ec-fota-create-skill-v1.0.0/nwy-ec-fota-create-skill-1.0.0.zip",
+      "sizeMB": 53.6,
+      "updated": "2026-10-10T17:37:11.169Z"
     }
   }
 }
