@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1360 580" width="1360" height="580" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>NEOWAY SKILLS REPO</title>
+  <desc>Neoway 标准模组团队技能包分发仓库：Claude Code 插件市场、AICom 一键安装、多 Agent 接入、Release 分发、一键安装脚本</desc>
+  <defs>
+    <pattern id="dotgrid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <circle cx="26" cy="26" r="2" fill="#1c2330"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1360" height="580" fill="#0d1117"/>
+  <rect x="0" y="0" width="1360" height="580" fill="url(#dotgrid)"/>
+  <rect x="0" y="576" width="1360" height="4" fill="#68b72e"/>
+
+  <text x="80" y="120" font-family="Consolas, 'Courier New', monospace" font-size="22" fill="#8b949e" letter-spacing="4">NEOWAY MODULE TEAM · SKILLS</text>
+  <text x="80" y="256" font-family="Consolas, 'Courier New', monospace" font-size="92" font-weight="700" fill="#68b72e">NEOWAY</text>
+  <text x="80" y="340" font-family="Consolas, 'Courier New', monospace" font-size="60" font-weight="700" fill="#e6edf3" letter-spacing="2">SKILLS REPO</text>
+  <text x="80" y="408" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b949e">标准模组团队技能包分发仓库</text>
+
+  <g font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26">
+    <rect x="768" y="104" width="34" height="34" rx="8" fill="none" stroke="#68b72e" stroke-width="3"/>
+    <path d="M777 121 l5 5 11-13" fill="none" stroke="#68b72e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="824" y="130" fill="#e6edf3">Claude Code 插件市场接入</text>
+    <rect x="768" y="184" width="34" height="34" rx="8" fill="none" stroke="#68b72e" stroke-width="3"/>
+    <path d="M777 201 l5 5 11-13" fill="none" stroke="#68b72e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="824" y="210" fill="#e6edf3">AICom 团队仓库一键安装</text>
+    <rect x="768" y="264" width="34" height="34" rx="8" fill="none" stroke="#68b72e" stroke-width="3"/>
+    <path d="M777 281 l5 5 11-13" fill="none" stroke="#68b72e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="824" y="290" fill="#e6edf3">多 Agent 接入<tspan fill="#8b949e" font-size="24">（Trae / Codex / Zcode 等）</tspan></text>
+    <rect x="768" y="344" width="34" height="34" rx="8" fill="none" stroke="#68b72e" stroke-width="3"/>
+    <path d="M777 361 l5 5 11-13" fill="none" stroke="#68b72e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="824" y="370" fill="#e6edf3">Release 技能包直链分发</text>
+    <rect x="768" y="424" width="34" height="34" rx="8" fill="none" stroke="#68b72e" stroke-width="3"/>
+    <path d="M777 441 l5 5 11-13" fill="none" stroke="#68b72e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="824" y="450" fill="#e6edf3">PowerShell 一键安装脚本</text>
+  </g>
+
+  <line x1="80" y1="492" x2="1280" y2="492" stroke="#21262d" stroke-width="2"/>
+  <text x="680" y="540" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="24" fill="#566073">覆盖环节：需求分析 · 编译构建 · 固件烧录 · FOTA 打包 · 更多持续接入</text>
+</svg>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/neoway-logo.png" alt="Neoway 有方科技" width="200">
+  <img src="assets/banner.svg" alt="NEOWAY SKILLS REPO" width="100%">
 </p>
 
 # Neoway 标准模组团队技能仓库
