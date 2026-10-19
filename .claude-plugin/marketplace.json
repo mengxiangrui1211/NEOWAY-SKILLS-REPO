@@ -43,6 +43,11 @@
       "name": "nwy-git-commit-skill",
       "source": "./plugins/nwy-git-commit-skill",
       "description": "本公司 Git 代码提交入库流程（Gerrit）：git status 确认改动 → 展示拟 add 文件清单等用户确认 → git add → 按公司模板组织提交信息等用户确认 → git commit -F（绕开弹框）→ 用户确认后 git push origin HEAD:refs/for/<当前分支>。当用户说\"提交\"\"代码入库\"\"入库\"\"push\"\"push gerrit\"\"提交代码\"\"推代码\"\"推到 gerrit\"，或明确授权提交时使用。编译副产物与本次功能无关的修改默认不 add。"
+    },
+    {
+      "name": "nwy-ec626-build-skill",
+      "source": "./plugins/nwy-ec626-build-skill",
+      "description": "EC626 平台编译工具，支持固件、Bootloader、清理产物、Unilog 预解析的交互式编译，自动处理 build_nwy.bat 全部菜单项（数字选项目 / B / U / C / E）并弹出实时日志窗口，编译结束后自动终止 bat 进程树防止菜单死循环。项目列表每次运行时从当前分支 nwy_project/ 目录实时枚举，不维护任何静态项目清单（EC626 仓库多分支并存，写死的清单在别的分支必然失效），切换分支或新增项目目录后自动识别。用于用户要求\"编译\"\"构建\"\"build\" EC626/N306 项目时。"
     }
   ]
 }
