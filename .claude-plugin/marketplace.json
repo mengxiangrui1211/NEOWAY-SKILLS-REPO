@@ -33,6 +33,11 @@
       "name": "nwy-ec-fota-create-skill",
       "source": "./plugins/nwy-ec-fota-create-skill",
       "description": "移芯 EC 系列模组 FOTA 差分包打包，支持 EC616/EC618/EC626/EC626E/EC716/EC718/QCX 全系平台（config 内置）。当用户要求\"做 fota 包 / 打差分包 / 差分 / 生成升级包 / 回退包 / 004-005.par / 版本升级包 / delta 包\"或提到 FotaToolkit / EC626 / binpkg / Eigencomm 打包等时使用。基于 FotaToolkit.exe CLI（工具已内置在 skill 的 tool/ 目录，自包含可迁移），一次产出正向升级包与反向回退包并自动校验。不涉及 GUI 操作、串口烧录和云端 FOTA。"
+    },
+    {
+      "name": "nwy-feishu-ticket-flow-skill",
+      "source": "./plugins/nwy-feishu-ticket-flow-skill",
+      "description": "飞书项目单子流转收口：开发+验证完成后把缺陷单从 Open 链式流转到回归（Open→Fixed→Regression 两跳走完），补全必填表单、关联回归版本、填写必填角色。单子正常起点是 Open；已在 Fixed 的单子则只走 Fixed→Regression 一跳。兼顾需求单/ITR（节点流）的节点确认流转。当用户说\"流转单子\"\"走单\"\"提测\"\"单子收口\"\"流转到回归\"\"单子流转\"时使用。不负责代码修复/编译（走 nwy-ec626-build-skill）/提交（走 nwy-git-commit-skill），也不负责回归通过后的关闭。"
     }
   ]
 }
