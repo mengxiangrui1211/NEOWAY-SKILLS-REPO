@@ -12,6 +12,7 @@ Neoway 标准模组项目团队技能包分发仓库，由 mengxiangrui 发布�
 <!-- SKILLS:BEGIN 由 AICom 发布时自动更新，勿手工编辑 -->
 | 技能包 | 版本 | 说明 | 更新时间 |
 | --- | --- | --- | --- |
+| nwy-ec626-build-skill | v1.0.0 | EC626 平台编译工具，支持固件、Bootloader、清理产物、Unilog 预解析的交互式编译，自动处理 build_nwy.bat 全部菜单项（数字选项目 / B / U / C / E）并弹出实时日志窗口，编译结束后自动终止 bat 进程树防止菜单死循环。项目列表每次运行时从当前分支 nwy_project/ 目录实时枚举，不维护任何静态项目清单（EC626 仓库多分支并存，写死的清单在别的分支必然失效），切换分支或新增项目目录后自动识别。用于用户要求"编译""构建""build" EC626/N306 项目时。 | 2026/10/19 |
 | nwy-git-commit-skill | v1.0.0 | 本公司 Git 代码提交入库流程（Gerrit）：git status 确认改动 → 展示拟 add 文件清单等用户确认 → git add → 按公司模板组织提交信息等用户确认 → git commit -F（绕开弹框）→ 用户确认后 git push origin HEAD:refs/for/<当前分支>。当用户说"提交""代码入库""入库""push""push gerrit""提交代码""推代码""推到 gerrit"，或明确授权提交时使用。编译副产物与本次功能无关的修改默认不 add。 | 2026/10/19 |
 | nwy-feishu-ticket-flow-skill | v1.0.0 | 飞书项目单子流转收口：开发+验证完成后把缺陷单从 Open 链式流转到回归（Open→Fixed→Regression 两跳走完），补全必填表单、关联回归版本、填写必填角色。单子正常起点是 Open；已在 Fixed 的单子则只走 Fixed→Regression 一跳。兼顾需求单/ITR（节点流）的节点确认流转。当用户说"流转单子""走单""提测""单子收口""流转到回归""单子流转"时使用。不负责代码修复/编译（走 nwy-ec626-build-skill）/提交（走 nwy-git-commit-skill），也不负责回归通过后的关闭。 | 2026/10/19 |
 | nwy-ec-fota-create-skill | v1.0.0 | 移芯 EC 系列模组 FOTA 差分包打包，支持 EC616/EC618/EC626/EC626E/EC716/EC718/QCX 全系平台（config 内置）。当用户要求"做 fota 包 / 打差分包 / 差分 / 生成升级包 / 回退包 / 004-005.par / 版本升级包 / delta 包"或提到 FotaToolkit / EC626 / binpkg / Eigencomm 打包等时使用。基于 FotaToolkit.exe CLI（工具已内置在 skill 的 tool/ 目录，自包含可迁移），一次产出正向升级包与反向回退包并自动校验。不涉及 GUI 操作、串口烧录和云端 FOTA。 | 2026/10/11 |
