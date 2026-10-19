@@ -1,0 +1,5 @@
+{
+  "name": "nwy-feishu-ticket-flow-skill",
+  "version": "1.0.0",
+  "description": "飞书项目单子流转收口：开发+验证完成后把缺陷单从 Open 链式流转到回归（Open→Fixed→Regression 两跳走完），补全必填表单、关联回归版本、填写必填角色。单子正常起点是 Open；已在 Fixed 的单子则只走 Fixed→Regression 一跳。兼顾需求单/ITR（节点流）的节点确认流转。当用户说\"流转单子\"\"走单\"\"提测\"\"单子收口\"\"流转到回归\"\"单子流转\"时使用。不负责代码修复/编译（走 nwy-ec626-build-skill）/提交（走 nwy-git-commit-skill），也不负责回归通过后的关闭。"
+}
