@@ -1,6 +1,6 @@
 {
   "marketplace": "NEOWAY-SKILLS-REPO",
-  "updated": "2026-10-19T08:06:11.320Z",
+  "updated": "2026-10-19T08:08:49.307Z",
   "skills": {
     "nwy-rda8909b-build-skill": {
       "name": "nwy-rda8909b-build-skill",
@@ -57,6 +57,14 @@
       "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-feishu-ticket-flow-skill-v1.0.0/nwy-feishu-ticket-flow-skill-1.0.0.zip",
       "sizeMB": 0,
       "updated": "2026-10-19T08:05:56.199Z"
+    },
+    "nwy-git-commit-skill": {
+      "name": "nwy-git-commit-skill",
+      "version": "1.0.0",
+      "description": "本公司 Git 代码提交入库流程（Gerrit）：git status 确认改动 → 展示拟 add 文件清单等用户确认 → git add → 按公司模板组织提交信息等用户确认 → git commit -F（绕开弹框）→ 用户确认后 git push origin HEAD:refs/for/<当前分支>。当用户说\"提交\"\"代码入库\"\"入库\"\"push\"\"push gerrit\"\"提交代码\"\"推代码\"\"推到 gerrit\"，或明确授权提交时使用。编译副产物与本次功能无关的修改默认不 add。",
+      "asset": "https://github.com/mengxiangrui1211/NEOWAY-SKILLS-REPO/releases/download/nwy-git-commit-skill-v1.0.0/nwy-git-commit-skill-1.0.0.zip",
+      "sizeMB": 0,
+      "updated": "2026-10-19T08:08:37.333Z"
     }
   }
 }
