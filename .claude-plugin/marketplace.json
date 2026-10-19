@@ -38,6 +38,11 @@
       "name": "nwy-feishu-ticket-flow-skill",
       "source": "./plugins/nwy-feishu-ticket-flow-skill",
       "description": "飞书项目单子流转收口：开发+验证完成后把缺陷单从 Open 链式流转到回归（Open→Fixed→Regression 两跳走完），补全必填表单、关联回归版本、填写必填角色。单子正常起点是 Open；已在 Fixed 的单子则只走 Fixed→Regression 一跳。兼顾需求单/ITR（节点流）的节点确认流转。当用户说\"流转单子\"\"走单\"\"提测\"\"单子收口\"\"流转到回归\"\"单子流转\"时使用。不负责代码修复/编译（走 nwy-ec626-build-skill）/提交（走 nwy-git-commit-skill），也不负责回归通过后的关闭。"
+    },
+    {
+      "name": "nwy-git-commit-skill",
+      "source": "./plugins/nwy-git-commit-skill",
+      "description": "本公司 Git 代码提交入库流程（Gerrit）：git status 确认改动 → 展示拟 add 文件清单等用户确认 → git add → 按公司模板组织提交信息等用户确认 → git commit -F（绕开弹框）→ 用户确认后 git push origin HEAD:refs/for/<当前分支>。当用户说\"提交\"\"代码入库\"\"入库\"\"push\"\"push gerrit\"\"提交代码\"\"推代码\"\"推到 gerrit\"，或明确授权提交时使用。编译副产物与本次功能无关的修改默认不 add。"
     }
   ]
 }
